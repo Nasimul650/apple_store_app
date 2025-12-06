@@ -12,7 +12,7 @@ import { useGLTF, useTexture } from "@react-three/drei";
 import useMacBookStore from "../store";
 import { useEffect } from "react";
 import { noChangeParts } from "../constants";
-import { Color } from "three/webgpu";
+import { Color, SRGBColorSpace } from "three/webgpu";
 
 export default function MacbookModel14(props) {
   const { color } = useMacBookStore();
@@ -29,6 +29,9 @@ export default function MacbookModel14(props) {
   }, [color, scene])
 
   const texture = useTexture("/screen.png");
+    texture.colorSpace = SRGBColorSpace;
+    texture.needsUpdate = true;
+    
   return (
     <group {...props} dispose={null}>
       <mesh
