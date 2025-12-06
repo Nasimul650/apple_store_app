@@ -13,7 +13,7 @@ function App() {
     <>
       <NavBar />
       <Hero />
-      <ProductViewer />
+      {/* <ProductViewer /> */}
       <Showcase />
       <Performance />
       <Features />
